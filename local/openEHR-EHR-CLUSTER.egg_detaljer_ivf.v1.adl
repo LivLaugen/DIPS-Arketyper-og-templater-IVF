@@ -1,0 +1,593 @@
+archetype (adl_version=1.4; uid=9558baa4-d3d5-3028-b9c4-303ea1e50a1a)
+	openEHR-EHR-CLUSTER.egg_detaljer_ivf.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["name"] = <"">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"FA7B88ABCE17EF57BD5E37D219BF0D62">
+		["build_uid"] = <"edf259e2-e682-39a1-b509-3b063736c016">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Egg detaljer ivf
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Behandlingstype
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- OPU dato
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Forsøksnummer
+				value matches {
+					DV_COUNT matches {*}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..1} matches {    -- ET
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0005,    -- mSET
+							at0006,    -- eSET
+							at0007]    -- DET
+						}
+					}
+				}
+			}
+			ELEMENT[at0015] occurrences matches {0..1} matches {    -- Skål nummer
+				value matches {
+					DV_COUNT matches {*}
+				}
+			}
+			CLUSTER[at0008] occurrences matches {0..1} matches {    -- oocytter/Zygoter
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0009] occurrences matches {0..1} matches {    -- Total
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0010] occurrences matches {0..1} matches {    -- MII
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0011] occurrences matches {0..1} matches {    -- MI
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0012] occurrences matches {0..1} matches {    -- GV
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0013] occurrences matches {0..1} matches {    -- Annet
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0014] occurrences matches {0..1} matches {    -- 2PN
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0016] occurrences matches {0..1} matches {    -- Enkelt egg
+				items cardinality matches {1..*; unordered} matches {
+					CLUSTER[at0050] occurrences matches {0..*} matches {    -- Dag 0
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0053] occurrences matches {0..1} matches {    -- Dag 0
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0052] occurrences matches {0..1} matches {    -- Insem.
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0051] occurrences matches {0..1} matches {    -- Kommentar
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+					CLUSTER[at0043] occurrences matches {0..*} matches {    -- Dag 1
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0048] occurrences matches {0..1} matches {    -- Dag 1 kl.
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0047] occurrences matches {0..1} matches {    -- EC kl.
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0046] occurrences matches {0..1} matches {    -- PN
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0045] occurrences matches {0..1} matches {    -- PB
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0044] occurrences matches {0..1} matches {    -- PNf/Del
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+					CLUSTER[at0034] occurrences matches {0..*} matches {    -- Dag 2
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0042] occurrences matches {0..1} matches {    -- Dag 2
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0041] occurrences matches {0..1} matches {    -- Timer
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::128]>
+										list = <
+											["1"] = <
+												units = <"h">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0040] occurrences matches {0..1} matches {    -- Cell
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0039] occurrences matches {0..1} matches {    -- Cell size
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::380]>									>
+								}
+							}
+							ELEMENT[at0038] occurrences matches {0..1} matches {    -- Frag
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::380]>
+										list = <
+											["1"] = <
+												units = <"%">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0036] occurrences matches {0..1} matches {    -- Nuk.
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0035] occurrences matches {0..1} matches {    -- MN
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+					CLUSTER[at0029] occurrences matches {0..*} matches {    -- Dag 3
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0030] occurrences matches {0..1} matches {    -- Dag 3
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0033] occurrences matches {0..1} matches {    -- Cell
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0032] occurrences matches {0..1} matches {    -- Cell size
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::380]>									>
+								}
+							}
+							ELEMENT[at0031] occurrences matches {0..1} matches {    -- Frag
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::380]>
+										list = <
+											["1"] = <
+												units = <"%">
+											>
+										>
+									>
+								}
+							}
+						}
+					}
+					CLUSTER[at0023] occurrences matches {0..*} matches {    -- Blast
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0028] occurrences matches {0..1} matches {    -- Dag 5
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0027] occurrences matches {0..1} matches {    -- Dag 5
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0026] occurrences matches {0..1} matches {    -- Dag 6
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0025] occurrences matches {0..1} matches {    -- Dag 6
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0024] occurrences matches {0..1} matches {    -- Kommentar
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+					CLUSTER[at0020] occurrences matches {0..*} matches {    -- Resultat
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0021] occurrences matches {0..1} matches {    -- Grad
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0022] occurrences matches {0..1} matches {    -- Resultat
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+					CLUSTER[at0017] occurrences matches {0..1} matches {    -- Dag 0
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0018] occurrences matches {0..1} matches {    -- Kl
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0019] occurrences matches {0..1} matches {    -- Kommentar
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+			CLUSTER[at0055] occurrences matches {0..1} matches {    -- Signaturer
+				items cardinality matches {1..*; unordered} matches {
+					CLUSTER[at0059] occurrences matches {0..1} matches {    -- Dag 0
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0057] occurrences matches {0..1} matches {    -- Inseminasjons signatur kontroll
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0056] occurrences matches {0..1} matches {    -- Inseminasjons signatur
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+					ELEMENT[at0064] occurrences matches {0..1} matches {    -- PN signatur
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0065] occurrences matches {0..1} matches {    -- EC signatur
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0067] occurrences matches {0..1} matches {    -- Morfologi dag 3 signatur
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0066] occurrences matches {0..1} matches {    -- Morfologi dag 2 signatur
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					CLUSTER[at0060] occurrences matches {0..1} matches {    -- Resultat
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0061] occurrences matches {0..1} matches {    -- Vurdering signatur
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Egg detaljer ivf">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Behandlingstype">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"OPU dato">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Forsøksnummer">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"ET">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"mSET">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"eSET">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"DET">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"oocytter/Zygoter">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Total">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"MII">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"MI">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"GV">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Annet">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"2PN">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Skål nummer">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Enkelt egg">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Dag 0">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Kl">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Kommentar">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"Resultat">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Grad">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Resultat">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"Blast">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Kommentar">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Dag 6">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Dag 6">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"Dag 5">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"Dag 5">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"Dag 3">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"Dag 3">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"Frag">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"Cell size">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"Cell">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"Dag 2">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"MN">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"Nuk.">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"Frag">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"Cell size">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"Cell">
+					description = <"*">
+				>
+				["at0041"] = <
+					text = <"Timer">
+					description = <"*">
+				>
+				["at0042"] = <
+					text = <"Dag 2">
+					description = <"*">
+				>
+				["at0043"] = <
+					text = <"Dag 1">
+					description = <"*">
+				>
+				["at0044"] = <
+					text = <"PNf/Del">
+					description = <"*">
+				>
+				["at0045"] = <
+					text = <"PB">
+					description = <"*">
+				>
+				["at0046"] = <
+					text = <"PN">
+					description = <"*">
+				>
+				["at0047"] = <
+					text = <"EC kl.">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"Dag 1 kl.">
+					description = <"*">
+				>
+				["at0050"] = <
+					text = <"Dag 0">
+					description = <"*">
+				>
+				["at0051"] = <
+					text = <"Kommentar">
+					description = <"*">
+				>
+				["at0052"] = <
+					text = <"Insem.">
+					description = <"*">
+				>
+				["at0053"] = <
+					text = <"Dag 0">
+					description = <"*">
+				>
+				["at0055"] = <
+					text = <"Signaturer">
+					description = <"*">
+				>
+				["at0056"] = <
+					text = <"Inseminasjons signatur">
+					description = <"*">
+				>
+				["at0057"] = <
+					text = <"Inseminasjons signatur kontroll">
+					description = <"*">
+				>
+				["at0059"] = <
+					text = <"Dag 0">
+					description = <"*">
+				>
+				["at0060"] = <
+					text = <"Resultat">
+					description = <"*">
+				>
+				["at0061"] = <
+					text = <"Vurdering signatur">
+					description = <"*">
+				>
+				["at0064"] = <
+					text = <"PN signatur">
+					description = <"*">
+				>
+				["at0065"] = <
+					text = <"EC signatur">
+					description = <"*">
+				>
+				["at0066"] = <
+					text = <"Morfologi dag 2 signatur">
+					description = <"*">
+				>
+				["at0067"] = <
+					text = <"Morfologi dag 3 signatur">
+					description = <"*">
+				>
+			>
+		>
+	>
