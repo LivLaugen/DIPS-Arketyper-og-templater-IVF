@@ -1,0 +1,199 @@
+archetype (adl_version=1.4; uid=351545cd-6268-3f59-bc79-0e7887178b40)
+	openEHR-EHR-CLUSTER.graviditet_sammendrag_detaljer_dips.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["name"] = <"">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"8A63326482D70177343B2F663370288F">
+		["build_uid"] = <"995d5133-8e6b-346d-9f08-63f3c030dda3">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Graviditet sammendrag detaljer dips
+		items cardinality matches {1..*; unordered} matches {
+			CLUSTER[at0001] occurrences matches {0..1} matches {    -- Resultatevaluering abort
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Abort før uke 6?
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0003] occurrences matches {0..1} matches {    -- Dato, abort før uke 6
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0004] occurrences matches {0..1} matches {    -- Abort mellom uke 6 og uke 12?
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0005] occurrences matches {0..1} matches {    -- Dato, abort mellom uke 6 og 12
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0006] occurrences matches {0..1} matches {    -- Senabort mellom uke 12 og 23/24?
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0007] occurrences matches {0..1} matches {    -- Dato, senabort
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0018] occurrences matches {0..1} matches {    -- Type abort
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0008] occurrences matches {0..1} matches {    -- Intrauterin fosterdød
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0011] occurrences matches {0..1} matches {    -- IUFD?
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0012] occurrences matches {0..1} matches {    -- Dato, IUFD
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0013] occurrences matches {0..1} matches {    -- IUFD, årsak
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0009] occurrences matches {0..1} matches {    -- IUFD etter uke 23/24?
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0010] occurrences matches {0..1} matches {    -- Dato, IUFD etter uke 23/24
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0014] occurrences matches {0..1} matches {    -- Ekstrauterin graviditet
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0015] occurrences matches {0..1} matches {    -- Ekstrauterin graviditet?
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0016] occurrences matches {0..1} matches {    -- Blæremola
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0017] occurrences matches {0..1} matches {    -- Blæremola?
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Graviditet sammendrag detaljer dips">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Resultatevaluering abort">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"Abort før uke 6?">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Dato, abort før uke 6">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Abort mellom uke 6 og uke 12?">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Dato, abort mellom uke 6 og 12">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Senabort mellom uke 12 og 23/24?">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Dato, senabort">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Intrauterin fosterdød">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"IUFD etter uke 23/24?">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Dato, IUFD etter uke 23/24">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"IUFD?">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Dato, IUFD">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"IUFD, årsak">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Ekstrauterin graviditet">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Ekstrauterin graviditet?">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"Blæremola">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Blæremola?">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Type abort">
+					description = <"*">
+				>
+			>
+		>
+	>
