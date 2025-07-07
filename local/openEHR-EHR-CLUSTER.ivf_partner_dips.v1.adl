@@ -1,0 +1,80 @@
+archetype (adl_version=1.4; uid=296d8968-a1e4-3895-82b2-327973f4a7fd)
+	openEHR-EHR-CLUSTER.ivf_partner_dips.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["name"] = <"">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"brukes i IVF løsning som er laget i samarbeid med OUS for å registrere partner info">
+			use = <"brukes i IVF løsning som er laget i samarbeid med OUS for å registrere partner info">
+			misuse = <"brukes ikke til annet enn beskrevet over">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"A5A57B34A196408B22B73C199DF1C24E">
+		["build_uid"] = <"5f9bf0a7-2e56-3520-9058-0e26044bfaaa">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Ivf partner
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0007] occurrences matches {0..1} matches {    -- Er dette pasienten?
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..1} matches {    -- Partners Navn
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0010] occurrences matches {0..1} matches {    -- Partners fødselsnummer
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- SaksID
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Ivf partner">
+					description = <"unknown">
+				>
+				["at0003"] = <
+					text = <"SaksID">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Partners Navn">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Er dette pasienten?">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Partners fødselsnummer">
+					description = <"*">
+				>
+			>
+		>
+	>
