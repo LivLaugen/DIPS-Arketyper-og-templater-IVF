@@ -1,0 +1,64 @@
+archetype (adl_version=1.4; uid=0ace3318-a614-3e3c-b59f-15d83f07b5e3)
+	openEHR-EHR-CLUSTER.ivf_planleggning_dips.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["name"] = <"">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"C79FB70A4D934254069003A752F2E6FE">
+		["build_uid"] = <"37928681-f153-32c6-8681-26f41e52e0a2">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Ivf planleggning dips
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0002] matches {    -- Status siste plan
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0007,    -- Tentativ dato
+							at0008]    -- Avtalt dato
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Ivf planleggning dips">
+					description = <"unknown">
+				>
+				["at0002"] = <
+					text = <"Status siste plan">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Tentativ dato">
+					description = <"Planen har kun en tentativ status">
+				>
+				["at0008"] = <
+					text = <"Avtalt dato">
+					description = <"Planlagt tid er avtalt med pasient">
+				>
+			>
+		>
+	>
