@@ -1,0 +1,116 @@
+archetype (adl_version=1.4; uid=218e79ea-e5b1-3f6d-ad40-8920d092ed68)
+	openEHR-EHR-CLUSTER.embryo_transfer_dips.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["name"] = <"">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"2BE9A6C1DB13A82D7E5C7130843254FE">
+		["build_uid"] = <"eec1f1e7-e156-3ffe-99b0-4576af3d1c7d">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Embryo transfer dips
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Antall embryo tilbakeført
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0004,    -- Elektiv Singel Embryo Transfer
+							at0005,    -- Singel Embryo Transfer
+							at0006,    -- Dobbel Embryo Tilbakeføringer
+							at0007]    -- Trippel Embryo Transfer
+						}
+					}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Embryogradering
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0008,    -- Topp kvalitet, Brussel type 1.0
+							at0009,    -- God kvalitet, Brussel type 2.0, 2.1
+							at0010,    -- Nedsatt kvalitet, Brussel type 2.2, 3.1
+							at0011]    -- Dårlig kvalitet
+						}
+					}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Antall nedfrosset embryo
+				value matches {
+					DV_COUNT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Embryo transfer dips">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Antall embryo tilbakeført">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"Embryogradering">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Antall nedfrosset embryo">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Elektiv Singel Embryo Transfer">
+					description = <"ESET">
+				>
+				["at0005"] = <
+					text = <"Singel Embryo Transfer">
+					description = <"SET">
+				>
+				["at0006"] = <
+					text = <"Dobbel Embryo Tilbakeføringer">
+					description = <"DET">
+				>
+				["at0007"] = <
+					text = <"Trippel Embryo Transfer">
+					description = <"TET">
+				>
+				["at0008"] = <
+					text = <"Topp kvalitet, Brussel type 1.0">
+					description = <"A">
+				>
+				["at0009"] = <
+					text = <"God kvalitet, Brussel type 2.0, 2.1">
+					description = <"B">
+				>
+				["at0010"] = <
+					text = <"Nedsatt kvalitet, Brussel type 2.2, 3.1">
+					description = <"C">
+				>
+				["at0011"] = <
+					text = <"Dårlig kvalitet">
+					description = <"D">
+				>
+			>
+		>
+	>
