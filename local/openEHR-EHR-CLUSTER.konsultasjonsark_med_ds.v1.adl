@@ -1,0 +1,182 @@
+archetype (adl_version=1.4; uid=c5d6c702-47be-48a0-914b-2687d5f6d93a)
+	openEHR-EHR-CLUSTER.konsultasjonsark_med_ds.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["date"] = <"2021-01-27">
+		["name"] = <"">
+	>
+	lifecycle_state = <"NotSet">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"???">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["custodian_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["MD5-CAM-1.0.1"] = <"F08399E3FD58CEFEBE4264CA1915A61E">
+		["build_uid"] = <"8847b81a-7e6d-3979-bbba-ecee08d6150d">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Konsultasjonsark_MED_DS
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0008] occurrences matches {0..1} matches {    -- Kontaktlege
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0064] occurrences matches {0..1} matches {    -- Utførende avdeling
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0033] occurrences matches {0..1} matches {    -- Ingen videre oppfølgning- Overføres fastlege
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0065] occurrences matches {0..1} matches {    -- Behold planlagt kontroll
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			CLUSTER[at0034] occurrences matches {0..1} matches {    -- Neste aktivitet
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0036] occurrences matches {0..1} matches {    -- Neste time
+						value matches {
+							DV_DATE matches {*}
+						}
+					}
+					ELEMENT[at0037] occurrences matches {0..1} matches {    -- Neste time spesifikk
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0043] occurrences matches {0..1} matches {    -- Lengde på ønsket konsultasjon
+						value matches {
+							DV_DURATION matches {
+								value matches {PTM}
+							}
+						}
+					}
+					CLUSTER[at0047] occurrences matches {0..1} matches {    -- Tolk
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0046] occurrences matches {0..1} matches {    -- Ønsker tolk
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
+							ELEMENT[at0048] occurrences matches {0..1} matches {    -- Språk
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0049] occurrences matches {0..1} matches {    -- Kjønn
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+					CLUSTER[at0062] occurrences matches {0..1} matches {    -- Andre planlagte aktiveteter i sammenheng med neste poliklinske
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0063] occurrences matches {0..*} matches {    -- Undersøkelser/oppgaver
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0050] occurrences matches {0..1} matches {    -- Beskrivelse
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Konsultasjonsark_MED_DS">
+					description = <"Konsultasjonsark_MED_DS">
+				>
+				["at0008"] = <
+					text = <"Kontaktlege">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"Ingen videre oppfølgning- Overføres fastlege">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"Neste aktivitet">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"Neste time">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"Neste time spesifikk">
+					description = <"*">
+				>
+				["at0043"] = <
+					text = <"Lengde på ønsket konsultasjon">
+					description = <"*">
+				>
+				["at0046"] = <
+					text = <"Ønsker tolk">
+					description = <"*">
+				>
+				["at0047"] = <
+					text = <"Tolk">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"Språk">
+					description = <"*">
+				>
+				["at0049"] = <
+					text = <"Kjønn">
+					description = <"*">
+				>
+				["at0050"] = <
+					text = <"Beskrivelse">
+					description = <"*">
+				>
+				["at0062"] = <
+					text = <"Andre planlagte aktiveteter i sammenheng med neste poliklinske">
+					description = <"*">
+				>
+				["at0063"] = <
+					text = <"Undersøkelser/oppgaver">
+					description = <"*">
+				>
+				["at0064"] = <
+					text = <"Utførende avdeling">
+					description = <"*">
+				>
+				["at0065"] = <
+					text = <"Behold planlagt kontroll">
+					description = <"*">
+				>
+			>
+		>
+	>
