@@ -1,0 +1,77 @@
+archetype (adl_version=1.4; uid=d0c0fde9-bb74-3f3a-ad33-9bdc538637c7)
+	openEHR-EHR-CLUSTER.ivf_partner.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["name"] = <"">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"6AE134C24BF6CF4EC9D2BF7D65AC5348">
+		["build_uid"] = <"55000e0e-ad12-3d86-8e04-c8a62580eab5">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Ivf partner
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0007] occurrences matches {0..1} matches {    -- Er dette pasienten?
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..1} matches {    -- Partners Navn
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0010] occurrences matches {0..1} matches {    -- Partners fødselsnummer
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- SaksID
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Ivf partner">
+					description = <"unknown">
+				>
+				["at0003"] = <
+					text = <"SaksID">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Partners Navn">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Er dette pasienten?">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Partners fødselsnummer">
+					description = <"*">
+				>
+			>
+		>
+	>
