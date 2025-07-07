@@ -1,0 +1,98 @@
+archetype (adl_version=1.4; uid=4ebd2e3a-83d1-3321-8d4a-6b661d166deb)
+	openEHR-EHR-CLUSTER.undersokelse_av_oocytt_og_embryo_detaljer_dips.v3
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["name"] = <"Morten Pavicevic Hørthe">
+		["organisation"] = <"DIPS AS">
+		["email"] = <"mho@dips.no">
+	>
+	lifecycle_state = <"0">
+	other_contributors = <"Martine Louise Nalum, DIPS AS, Norway","Peter Zoltan Fedorcsak OUS, Norway","Vebjørn Arntzen, OUS, Norway","Liv Laugen, OUS, Norway">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Dekker lokale behov som ikke er eller bør være en del av godkjent arketype">
+			use = <"Brukes utelukkende i løsning IVF levert av DIPS på oppdrag fra OUS.">
+			misuse = <"skal ikke brukes til noe annet enn beskrevet over.">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"6057840BF7C038D294634F6944B81156">
+		["build_uid"] = <"54065169-ee35-3f41-af17-0c491fdf90fb">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Undersokelse av oocytt og embryo detaljer dips
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Visning av fortkortelse for observasjoner
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- SEC-ID
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..1} matches {    -- Utført prosedyre
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0005,    -- Nedfrysning
+							at0006,    -- Embryotransfer
+							at0008,    -- Opptining
+							at0009]    -- Annet
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Undersokelse av oocytt og embryo detaljer dips">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Visning av fortkortelse for observasjoner">
+					description = <"Samlet visning over data registrer i [openEHR-EHR-OBSERVATION.embryo_assessment.v1]">
+				>
+				["at0002"] = <
+					text = <"SEC-ID">
+					description = <"SEC-ID">
+				>
+				["at0004"] = <
+					text = <"Utført prosedyre">
+					description = <"Gjennomført prosedyre på egget. Selve dokumentasjonen av nedfrysning gjøres i prosedyreoppføring">
+				>
+				["at0005"] = <
+					text = <"Nedfrysning">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Embryotransfer">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Opptining">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Annet">
+					description = <"*">
+				>
+			>
+		>
+	>
