@@ -1,0 +1,54 @@
+archetype (adl_version=1.4; uid=9a849c10-6a4c-31fe-bc89-af33c2272e1d)
+	openEHR-EHR-CLUSTER.behandlingsdag_for_start_medikament_dips.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["name"] = <"">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Brukes for å definere en stimuleringsdag for start medikament i IVF behandlingen.">
+			use = <"Brukes for å definere en stimuleringsdag for start medikament i IVF behandlingen.
+
+Hensikten er at kliniker ikke må forholde seg til en konkret dato, men kan definere en dag i behandlingen som vil være utfra start datoen for den overordnede behandlingen. ">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"63DA738312FBD93B26B3D87C0FEA8901">
+		["build_uid"] = <"f8a79a8a-3b2f-3f56-ab04-e02bf96f07fe">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Behandlingsdag for start medikament dips
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0002] matches {    -- Stimuleringsdag
+				value matches {
+					DV_COUNT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Behandlingsdag for start medikament dips">
+					description = <"unknown">
+				>
+				["at0002"] = <
+					text = <"Stimuleringsdag">
+					description = <"Et tall som definerer en spesifikk behandlingsdag.">
+				>
+			>
+		>
+	>
