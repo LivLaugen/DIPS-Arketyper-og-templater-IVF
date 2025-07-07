@@ -1,0 +1,50 @@
+archetype (adl_version=1.4; uid=812c9f93-e7f7-3aa4-b88a-7aa7381d3956)
+	openEHR-EHR-CLUSTER.summary_quality_assurance_dips.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["name"] = <"">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"D3E04BEE1FB600B6E11D14253E935085">
+		["build_uid"] = <"39cfde4f-fa22-3b7b-b40c-3ee321f0d768">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Forsøkssammendrag kvalitetssikring
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Er pasientens behandlingsforsøk avsluttet og all data kvalitetssikret?
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Forsøkssammendrag kvalitetssikring">
+					description = <"Cluster hvis hensikt er å fungere som en teknisk sperre for lagring og godkjenning av forsøkssammendrag dersom det ikke finnes et tidspunkt for avsluttet behandlingsforsøk. ">
+				>
+				["at0001"] = <
+					text = <"Er pasientens behandlingsforsøk avsluttet og all data kvalitetssikret?">
+					description = <"">
+				>
+			>
+		>
+	>
