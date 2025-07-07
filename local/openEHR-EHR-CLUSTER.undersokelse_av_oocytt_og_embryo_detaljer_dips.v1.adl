@@ -1,0 +1,74 @@
+archetype (adl_version=1.4; uid=2abe404c-1d2d-30c6-8e46-38c5d07ea997)
+	openEHR-EHR-CLUSTER.undersokelse_av_oocytt_og_embryo_detaljer_dips.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["name"] = <"Morten Pavicevic Hørthe">
+		["organisation"] = <"DIPS AS">
+		["email"] = <"mho@dips.no">
+	>
+	lifecycle_state = <"0">
+	other_contributors = <"Martine Louise Nalum, DIPS AS, Norway","Peter Zoltan Fedorcsak OUS, Norway","Vebjørn Arntzen, OUS, Norway","Liv Laugen, OUS, Norway">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Dekker lokale behov som ikke er eller bør være en del av godkjent arketype">
+			use = <"Brukes utelukkende i løsning IVF levert av DIPS på oppdrag fra OUS.">
+			misuse = <"skal ikke brukes til noe annet enn beskrevet over.">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"AC70827CC071FE7E7D0B4488B625DFDF">
+		["build_uid"] = <"4f96e605-c116-38ac-9458-d4fb62bffb53">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Undersokelse av oocytt og embryo detaljer dips
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Visning av fortkortelse for observasjoner
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- SEC-ID
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Nedfrysning
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Undersokelse av oocytt og embryo detaljer dips">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Visning av fortkortelse for observasjoner">
+					description = <"Samlet visning over data registrer i [openEHR-EHR-OBSERVATION.embryo_assessment.v1]">
+				>
+				["at0002"] = <
+					text = <"SEC-ID">
+					description = <"SEC-ID">
+				>
+				["at0003"] = <
+					text = <"Nedfrysning">
+					description = <"Om egget fryses ned brukes dette feltet. Selve dokumentasjonen av nedfrysning gjøres i prosedyreoppføring">
+				>
+			>
+		>
+	>
